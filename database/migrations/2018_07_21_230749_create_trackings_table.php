@@ -23,9 +23,7 @@ class CreateTrackingsTable extends Migration
                 ->references('id')->on('trackers')
                 ->onDelete('cascade');
 
-            $table->foreign('tracking_tracker_id')
-                ->references('id')->on('trackers')
-                ->onDelete('cascade');
+            $table->unique(['tracker_id', 'tracking_tracker_id']);
         });
     }
 

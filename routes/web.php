@@ -17,3 +17,6 @@ $router->get('/', function () use ($router) {
 
 $router->get('/{id}', 'GetTracker');
 $router->post('/{id}', 'UpdateLocation');
+
+$router->get('/{id}/trackings', 'ListTracking');
+$router->post('/{id}/trackings', 'AddTracking');

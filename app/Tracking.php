@@ -13,7 +13,7 @@ class Tracking extends Model
      * @var array
      */
     protected $fillable = [
-        'tracker_id', 'tracking_tracker_id',
+        'tracking_tracker_id',
     ];
 
     /**
@@ -25,6 +25,16 @@ class Tracking extends Model
 
     public function tracker()
     {
-        return $this->hasOne('App\Tracker');
+        return $this->hasOne('App\Tracker', 'id', 'tracking_tracker_id');
+    }
+
+    public function locations()
+    {
+        return $this->hasMany('App\TrackerLocation', 'tracker_id', 'tracking_tracker_id');
+    }
+
+    public function lastLocation()
+    {
+        return $this->locations()->orderBy('id', 'desc')->first();
     }
 }

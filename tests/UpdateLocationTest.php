@@ -12,6 +12,7 @@ class UpdateLocationTest extends TestCase
         ];
 
         $this->json('POST', '/9999', $lastLocation)
+            ->seeStatusCode(201)
             ->seeJson([
                 'user_id' => 9999,
                 'last_location' => $lastLocation,

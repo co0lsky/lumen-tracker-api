@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class UpdateLocation extends Controller
 {
     /**
-     * Get tracker information.
+     * Update location
      *
      * @param Request $request
      * @param  int $id
@@ -45,6 +45,6 @@ class UpdateLocation extends Controller
                 'lat' => $lastLocation->lat,
                 'lng' => $lastLocation->lng,
             ]
-        ]);
+        ], 201);
     }
 }
