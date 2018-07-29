@@ -14,7 +14,7 @@ class AddAddressField extends Migration
     public function up()
     {
         Schema::table('tracker_locations', function (Blueprint $table) {
-            $table->text('address');
+            $table->text('address')->nullable();
         });
     }
 
