@@ -23,6 +23,7 @@ class UpdateLocation extends Controller
     {
         $this->validate($request, [
             'name' => 'required',
+            'address' => '',
             'lat' => 'required',
             'lng' => 'required',
         ]);
@@ -31,6 +32,7 @@ class UpdateLocation extends Controller
 
         $lastLocation = new TrackerLocation([
             'name' => $request->get('name'),
+            'address' => $request->get('address', ''),
             'lat' => $request->get('lat'),
             'lng' => $request->get('lng'),
         ]);
@@ -42,6 +44,7 @@ class UpdateLocation extends Controller
             'code' => $tracker->code,
             'last_location' => [
                 'name' => $lastLocation->name,
+                'address' => $lastLocation->address,
                 'lat' => $lastLocation->lat,
                 'lng' => $lastLocation->lng,
             ]

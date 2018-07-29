@@ -13,7 +13,7 @@ class TrackerLocation extends Model
      * @var array
      */
     protected $fillable = [
-        'name', 'lat', 'lng',
+        'name', 'address', 'lat', 'lng',
     ];
 
     /**

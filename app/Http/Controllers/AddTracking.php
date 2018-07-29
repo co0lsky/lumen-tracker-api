@@ -50,6 +50,7 @@ class AddTracking extends Controller
             'last_location' => $lastLocation
                 ? [
                     'name' => $lastLocation->name,
+                    'address' => $lastLocation->address,
                     'lat' => $lastLocation->lat,
                     'lng' => $lastLocation->lng,
                     ]
